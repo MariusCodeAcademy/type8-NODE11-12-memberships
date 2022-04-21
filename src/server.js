@@ -8,6 +8,8 @@ const app = express();
 
 // Global MiddleWare
 app.use(morgan('dev'));
+// igalinam express app atkoduoti json gautus duomenis
+app.use(express.json());
 
 app.get('/', (req, res) => res.json('OK'));
 

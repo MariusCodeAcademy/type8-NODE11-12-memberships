@@ -7,3 +7,15 @@ GET http://localhost:3000/api/services
 
 ###
 
+
+POST http://localhost:3000/api/services
+Content-Type: application/json
+
+{
+  "name": "Bronze",
+  "description": "This is 30 days membership",
+  "price": 2.99
+}
+
+###
+

@@ -8,8 +8,8 @@
 2. isitraukti i server.js --done--
 3. tuscias GET /api/services - grazina json "all services route" --done--
 4. sukurti rankiniu budu 2-3 services compass, web, mongosh --done--
-5. gauti visus services esancius collekcijoje 'services'
-6. POST /api/services - tuscias route ir kreipimasis isitikinti kad veikia
+5. gauti visus services esancius collekcijoje 'services' --done--
+6. POST /api/services - tuscias route ir kreipimasis isitikinti kad veikia --done--
 7. POST /api/services - su http.rest/postman siunciam objekta su duomenimis sukurti naujai paslaugai. isitikiname kad veikia.
 8. DELETE /api/services/:serId - tuscias routes kuris grazina 'serId'
 9. DELETE /api/services/:serId - prisinungiam prie DB ir istrinam irasa.
