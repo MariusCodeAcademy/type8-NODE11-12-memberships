@@ -24,3 +24,26 @@
 6. GET /users/:order - isitikinam kad gaunam 'order'
 7. GET /users/:order - jei 'order' === ASC rikiuojam A-Z
 8. GET /users/:order - jei 'order' === DESC rikiuojam Z-A
+
+## FE Front end
+
+1. susikuriam public/index.html,
+2. public/js/services.js,
+3. public/css/style.css
+
+### Services.html Page
+
+1. Create navBar
+2. create static parts of design
+3. fetch services from BE and console log services
+4. generate cards of services (think about delete button)
+
+### Add-Service.html Page
+
+1. susikuriam public/add-service.html,
+2. public/js/addService.js,
+3. add-service.html sukuriam forma pagal dizaina
+4. addService.js perimam formos valdyma ir surenkam visus ivesties elementus
+5. addService.js siunciam sukure objekta su fetch kad sukurti nauja service
+6. jei sukurta sekmingai, naviguojam i index.html,
+7. jei ne pranesam apie klaida
