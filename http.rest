@@ -2,19 +2,17 @@ GET http://localhost:3000/api/users
 
 ###
 
-
 GET http://localhost:3000/api/services
 
 ###
-
 
 POST http://localhost:3000/api/services
 Content-Type: application/json
 
 {
-  "name": "Bronze",
-  "description": "This is 30 days membership",
-  "price": 2.99
+  "name": "Gold",
+  "description": "This is 90 days basic membership",
+  "price": 6.99
 }
 
 ###

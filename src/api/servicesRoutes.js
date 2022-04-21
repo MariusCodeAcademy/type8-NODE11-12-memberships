@@ -28,8 +28,9 @@ servicesRoutes.post('/services', async (req, res) => {
     await dbClient.connect();
 
     const coll = dbClient.db('membership11').collection('services');
-    const allArr = await coll.find().toArray();
-    res.json(allArr);
+
+    const insertRezult = await coll.insertOne(newServiceObj);
+    res.json(insertRezult);
   } catch (error) {
     console.error('error in get users', error);
     res.status(500).json('something is wrong');
