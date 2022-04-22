@@ -19,3 +19,62 @@
   text-decoration: underline;
   font-weight: bold;
 }
+
+.membership-main .btn {
+  background-color: dodgerblue;
+}
+.membership-main .btn.btn-add::before {
+  content: '+  ';
+}
+
+.membership-main {
+  background-color: rgb(219, 219, 219);
+  padding: 5% 0;
+}
+.membership-main .grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+}
+.membership-main .title-block {
+  grid-column: 1 / span 2;
+}
+.membership-main .btn-add {
+  align-self: center;
+}
+
+.cards-container {
+  grid-column: 1 / span 3;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  margin-top: 30px;
+}
+
+/* CARD ========== */
+.card {
+  border-radius: 5px;
+  flex: 1 1 30%;
+  background-color: #fff;
+  padding: 15px 0;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.card.members p {
+  min-height: 3em;
+}
+
+.card .hr {
+  align-self: stretch;
+  height: 1px;
+  background-color: #333;
+  margin: 20px 0;
+}
+.card .btn-delete {
+  background-color: tomato;
+  align-self: flex-end;
+  padding: 9px 12px;
+  margin-right: 25px;
+  /* border: none; */
+}
