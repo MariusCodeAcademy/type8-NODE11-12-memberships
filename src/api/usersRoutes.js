@@ -18,5 +18,5 @@ userRoutes.get('/users', async (req, res) => {
     await dbClient.close();
   }
 });
-
+// commonJs
 module.exports = userRoutes;
