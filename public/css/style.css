@@ -1,0 +1,21 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css');
+@import 'reset.css';
+@import 'common.css';
+
+/* Header =============================== */
+
+.main-nav {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.main-nav .nav-link {
+  display: block;
+  padding: 10px 25px;
+}
+
+.nav-link.active {
+  text-decoration: underline;
+  font-weight: bold;
+}
