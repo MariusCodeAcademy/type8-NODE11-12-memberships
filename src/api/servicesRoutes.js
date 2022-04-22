@@ -1,4 +1,5 @@
 const express = require('express');
+const { ObjectId } = require('mongodb');
 const { dbClient } = require('../config');
 
 const servicesRoutes = express.Router();
@@ -33,6 +34,33 @@ servicesRoutes.post('/services', async (req, res) => {
     res.json(insertRezult);
   } catch (error) {
     console.error('error in get users', error);
+    res.status(500).json('something is wrong');
+  } finally {
+    await dbClient.close();
+  }
+});
+
+//DELETE /api/services/:serId - tuscias routes kuris grazina 'serId'
+servicesRoutes.delete('/services/:serId', async (req, res) => {
+  try {
+    const stringId = req.params.serId;
+    const mongoObjId = new ObjectId(stringId);
+    await dbClient.connect();
+
+    const coll = dbClient.db('membership11').collection('services');
+    const deleteRezult = await coll.deleteOne({ _id: mongoObjId });
+    // isitikinti kad istikro buvi istrinta
+    if (deleteRezult.deletedCount === 1) {
+      res.status(200).json({ success: true });
+      return;
+    }
+    if (deleteRezult.deletedCount === 0) {
+      res.status(400).json({ err: 'no thing was deleted' });
+      return;
+    }
+    res.status(500).json('something is wrong');
+  } catch (error) {
+    console.error('error in delete user', error);
     res.status(500).json('something is wrong');
   } finally {
     await dbClient.close();

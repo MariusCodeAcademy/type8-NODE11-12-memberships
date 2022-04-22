@@ -17,3 +17,5 @@ Content-Type: application/json
 
 ###
 
+### DELETE
+DELETE http://localhost:3000/api/services/62625f6b749a6d421f5cc4d5
