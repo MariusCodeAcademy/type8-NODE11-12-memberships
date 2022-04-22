@@ -1,3 +1,5 @@
+import { deleteService } from '../services.js';
+
 function makeEl(tagName, text, dest, elClass = null) {
   const el = document.createElement(tagName);
   el.textContent = text;
@@ -21,6 +23,10 @@ export function createCard(newCardObj) {
   // makeEl('button', 'delete', articleEl, 'btn btn-delete');
   const btn = makeEl('button', '', articleEl, 'btn btn-delete');
   makeEl('i', '', btn, 'fa fa-trash');
+  btn.onclick = () => {
+    console.log('delete ', newCardObj._id);
+    deleteService(newCardObj._id);
+  };
 
   // console.log('articleEl ===', articleEl);
   return articleEl;

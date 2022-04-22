@@ -9,6 +9,7 @@ userRoutes.get('/users', async (req, res) => {
     await dbClient.connect();
 
     const coll = dbClient.db('membership11').collection('services');
+
     const allArr = await coll.find().toArray();
     res.json(allArr);
   } catch (error) {

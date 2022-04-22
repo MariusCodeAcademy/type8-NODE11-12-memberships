@@ -11,6 +11,7 @@ servicesRoutes.get('/services', async (req, res) => {
     await dbClient.connect();
 
     const coll = dbClient.db('membership11').collection('services');
+    // aggreguoti su useriais
     const allArr = await coll.find().toArray();
     res.json(allArr);
   } catch (error) {
@@ -46,6 +47,9 @@ servicesRoutes.delete('/services/:serId', async (req, res) => {
     const stringId = req.params.serId;
     const mongoObjId = new ObjectId(stringId);
     await dbClient.connect();
+
+    // pasitikrinti ar service turi useriu.
+    // jei turi netrinam ir apie tai pranesam
 
     const coll = dbClient.db('membership11').collection('services');
     const deleteRezult = await coll.deleteOne({ _id: mongoObjId });
