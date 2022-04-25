@@ -25,16 +25,18 @@
         </div>
         <button class="btn btn-add">New membership</button>
         <div class="add-container">
-          <label for="name">Name</label>
-          <input type="text" id="name" placeholder="Name" />
-          <label for="price">Price</label>
-          <input type="number" min="0" step="0.01" id="name" placeholder="Name" />
-          <label for="description">Description</label>
-          <textarea id="description" cols="30" rows="3"></textarea>
-          <div class="control">
-            <button id="cancel-btn" type="button">Cancel</button>
-            <button type="submit">Create</button>
-          </div>
+          <form class="form">
+            <label for="name">Name</label>
+            <input type="text" id="name" placeholder="Name" />
+            <label for="price">Price</label>
+            <input type="number" min="0" step="0.01" id="price" placeholder="Price" />
+            <label for="description">Description</label>
+            <textarea id="description" cols="30" rows="3"></textarea>
+            <div class="control">
+              <button id="cancel-btn" type="button">Cancel</button>
+              <button type="submit">Create</button>
+            </div>
+          </form>
         </div>
       </div>
     </main>

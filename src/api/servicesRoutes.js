@@ -27,10 +27,10 @@ servicesRoutes.post('/services', async (req, res) => {
 
   try {
     const newServiceObj = req.body;
+    /// validation
     await dbClient.connect();
 
     const coll = dbClient.db('membership11').collection('services');
-
     const insertRezult = await coll.insertOne(newServiceObj);
     res.json(insertRezult);
   } catch (error) {

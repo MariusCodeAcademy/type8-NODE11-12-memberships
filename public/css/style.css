@@ -78,3 +78,18 @@
   margin-right: 25px;
   /* border: none; */
 }
+
+
+/*  FORM */
+
+.form input, .form textarea {
+  display: block;
+  padding:5px 10px;
+  margin-bottom: 10px;
+  font-size: 1rem;
+
+}
+
+.form button[type='submit'] {
+  background-color: dodgerblue;
+}
