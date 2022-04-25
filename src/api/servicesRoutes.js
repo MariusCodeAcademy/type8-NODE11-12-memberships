@@ -32,7 +32,13 @@ servicesRoutes.post('/services', async (req, res) => {
 
     const coll = dbClient.db('membership11').collection('services');
     const insertRezult = await coll.insertOne(newServiceObj);
-    res.json(insertRezult);
+    if (insertRezult.insertedId) {
+      console.log('insert ok');
+      // jei siunciam tik status tai sendStatus()
+      res.sendStatus(201);
+      return;
+    }
+    throw new Error('insertRezult.insertedId false');
   } catch (error) {
     console.error('error in get users', error);
     res.status(500).json('something is wrong');
