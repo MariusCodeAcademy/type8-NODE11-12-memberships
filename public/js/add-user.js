@@ -27,9 +27,19 @@ async function getServices() {
   const resp = await fetch(`${BASE_URL}/services`);
   const serArr = await resp.json();
   console.log('serArr ===', serArr);
+  renderOptions(serArr, 'service_id');
 }
 getServices();
 // sugeneruoti options su createElement
 
 // <option value="1">Trial</option>
-function renderOptions() {}
+function renderOptions(arr, destId) {
+  const selectEl = document.getElementById(destId);
+  selectEl.innerHTML = '';
+  arr.forEach((serObj) => {
+    const optionEl = document.createElement('option');
+    optionEl.value = serObj._id;
+    optionEl.textContent = serObj.name;
+    selectEl.appendChild(optionEl);
+  });
+}
