@@ -8,7 +8,7 @@ function makeEl(tagName, text, dest, elClass = null) {
   return el;
 }
 /* <article class="card">
-    <h3>Price Title</h3>
+    <h3>Price Title </h3>
     <p>Desctip</p>
     <div class="hr"></div>
     <button class="btn btn-delete">delete</button>
@@ -16,6 +16,7 @@ function makeEl(tagName, text, dest, elClass = null) {
 // eslint-disable-next-line import/prefer-default-export
 export function createCard(newCardObj) {
   const articleEl = document.createElement('article');
+
   articleEl.className = 'card';
   makeEl('h3', `${newCardObj.price}eur ${newCardObj.name}`, articleEl);
   makeEl('p', newCardObj.description, articleEl);

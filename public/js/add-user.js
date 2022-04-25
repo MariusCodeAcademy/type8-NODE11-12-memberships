@@ -20,7 +20,26 @@ formEl.addEventListener('submit', (e) => {
     service_id: service_idEl.value,
   };
   console.log('newUserObj ===', newUserObj);
+  createUser(newUserObj);
 });
+
+async function createUser(userObj) {
+  const resp = await fetch(`${BASE_URL}/users`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(userObj),
+  });
+  console.log('resp ===', resp);
+
+  if (resp.status === 201) {
+    // sukurta sekmingai
+    // window.location.href = 'index.html';
+  } else {
+    console.error('something went wrong');
+  }
+}
 
 // parsisiusti services
 async function getServices() {

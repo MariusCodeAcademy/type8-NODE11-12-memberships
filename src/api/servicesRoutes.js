@@ -12,8 +12,27 @@ servicesRoutes.get('/services', async (req, res) => {
 
     const coll = dbClient.db('membership11').collection('services');
     // aggreguoti su useriais
-    const allArr = await coll.find().toArray();
-    res.json(allArr);
+    const agg = [
+      {
+        $lookup: {
+          from: 'users',
+          localField: '_id',
+          foreignField: 'service_id',
+          as: 'userArr',
+        },
+      },
+    ];
+    const allArr = await coll.aggregate(agg).toArray();
+    console.log('allArr ===', allArr);
+    const servicesWithUserCount = allArr.map((sObj) => {
+      const rez = {
+        ...sObj,
+        userCount: sObj.userArr.length,
+      };
+      delete rez.userArr;
+      return rez;
+    });
+    res.json(servicesWithUserCount);
   } catch (error) {
     console.error('error in get users', error);
     res.status(500).json('something is wrong');
