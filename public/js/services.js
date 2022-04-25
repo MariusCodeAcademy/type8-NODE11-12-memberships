@@ -1,6 +1,6 @@
+import { BASE_URL } from './modules/config.js';
 import { renderCards } from './modules/html.js';
 
-const BASE_URL = 'http://localhost:3000/api';
 console.log('sevices.js');
 
 const cardContainerEl = document.querySelector('.cards-container');
