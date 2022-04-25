@@ -6,6 +6,10 @@ console.log('sevices.js');
 const cardContainerEl = document.querySelector('.cards-container');
 const addBntEl = document.querySelector('.btn-add');
 
+addBntEl.addEventListener('click', () => {
+  window.location.href = 'add-service.html';
+});
+
 async function getServices() {
   try {
     const resp = await fetch(`${BASE_URL}/services`);
