@@ -32,10 +32,10 @@ async function createService(obj) {
   });
   console.log('resp ===', resp);
 
-  if (resp.status == 201) {
+  if (resp.status === 201) {
     // sukurta sekmingai
     window.location.href = 'index.html';
   } else {
-    console.error('somethin went wrong');
+    console.error('something went wrong');
   }
 }

@@ -82,7 +82,7 @@
 
 /*  FORM */
 
-.form input, .form textarea {
+.form input, .form textarea, .form select {
   display: block;
   padding:5px 10px;
   margin-bottom: 10px;

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Memberships - add service </title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <script type="module" src="./js/add-user.js" defer></script>
+  </head>
+
+  <body>
+    <header>
+      <div class="container">
+        <nav class="main-nav">
+          <a href="index.html" class="nav-link">Services</a>
+          <a href="users.html" class="nav-link active">Users</a>
+        </nav>
+      </div>
+    </header>
+    <main class="membership-main">
+      <div class="container grid">
+        <div class="title-block">
+          <h2>Add User</h2>
+        </div>
+        <button class="btn">back</button>
+        <div class="add-container">
+          <form class="form">
+            <label for="name">Name</label>
+            <input type="text" id="name" placeholder="Name" value="James" />
+            <input type="text" id="surname" placeholder="Surname" value="Bond" />
+            <input type="text" id="email" placeholder="Email" value="james@bond.com" />
+            <select name="service_id" id="service_id">
+              <option value="1">Trial</option>
+              <option value="2">Gold</option>
+            </select>
+
+            <div class="control">
+              <button id="cancel-btn" type="button">Cancel</button>
+              <button type="submit">Create</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
